@@ -1,0 +1,50 @@
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE
+
+type Query {
+  movies(search: String, genre: String, minPopularity: Float, maxPopularity: Float, minVoteAverage: Float, maxVoteAverage: Float, minBudget: Int, maxBudget: Int, limit: Int, offset: Int, orderBy: String, sort: Sort): [Movie]
+  movie(id: Int!): Movie
+  genres: [String!]!
+}
+
+type Movie {
+  id: Int!
+  originalLanguage: String!
+  originalTitle: String!
+  overview: String!
+  popularity: Float!
+  posterPath: String
+  releaseDate: String!
+  voteAverage: Float!
+  voteCount: Int!
+  title: String!
+  budget: Int!
+  runtime: Int!
+  genres: [String!]!
+  cast: [Cast!]!
+  director: Director!
+}
+
+type Cast {
+  profilePath: String
+  name: String!
+  character: String!
+  order: Int!
+}
+
+type Director {
+  id: Int!
+  name: String!
+}
+
+enum Sort {
+  ASC
+  DESC
+}
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload

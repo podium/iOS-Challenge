@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3284FFD0275B033A0039F3EB /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 3284FFCF275B033A0039F3EB /* Apollo */; };
+		3284FFD2275B033A0039F3EB /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 3284FFD1275B033A0039F3EB /* ApolloSQLite */; };
+		3284FFDB275B0CF40039F3EB /* Movies.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FFD9275B0CF40039F3EB /* Movies.graphql.swift */; };
+		3289E021275AF6F90058C710 /* MovieChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3289E020275AF6F90058C710 /* MovieChallengeApp.swift */; };
+		3289E023275AF6F90058C710 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3289E022275AF6F90058C710 /* ContentView.swift */; };
+		3289E025275AF6FB0058C710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3289E024275AF6FB0058C710 /* Assets.xcassets */; };
+		3289E028275AF6FB0058C710 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3289E027275AF6FB0058C710 /* Preview Assets.xcassets */; };
+		32DF5F31275AFB0E0016B534 /* Movies.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 32DF5F30275AFB0E0016B534 /* Movies.graphql */; };
+		32DF5F33275AFB1B0016B534 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF5F32275AFB1B0016B534 /* Network.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3284FFD9275B0CF40039F3EB /* Movies.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movies.graphql.swift; sourceTree = "<group>"; };
+		3289E01D275AF6F90058C710 /* Movie Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3289E020275AF6F90058C710 /* MovieChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChallengeApp.swift; sourceTree = "<group>"; };
+		3289E022275AF6F90058C710 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3289E024275AF6FB0058C710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3289E027275AF6FB0058C710 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		32DF5F30275AFB0E0016B534 /* Movies.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Movies.graphql; sourceTree = "<group>"; };
+		32DF5F32275AFB1B0016B534 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3289E01A275AF6F90058C710 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3284FFD0275B033A0039F3EB /* Apollo in Frameworks */,
+				3284FFD2275B033A0039F3EB /* ApolloSQLite in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3284FFD8275B0CF40039F3EB /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				3284FFD9275B0CF40039F3EB /* Movies.graphql.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		3289E014275AF6F90058C710 = {
+			isa = PBXGroup;
+			children = (
+				3289E01F275AF6F90058C710 /* Movie Challenge */,
+				3289E01E275AF6F90058C710 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3289E01E275AF6F90058C710 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3289E01D275AF6F90058C710 /* Movie Challenge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3289E01F275AF6F90058C710 /* Movie Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				3289E020275AF6F90058C710 /* MovieChallengeApp.swift */,
+				3284FFD8275B0CF40039F3EB /* Generated */,
+				3289E022275AF6F90058C710 /* ContentView.swift */,
+				32DF5F30275AFB0E0016B534 /* Movies.graphql */,
+				32DF5F32275AFB1B0016B534 /* Network.swift */,
+				3289E024275AF6FB0058C710 /* Assets.xcassets */,
+				3289E026275AF6FB0058C710 /* Preview Content */,
+			);
+			path = "Movie Challenge";
+			sourceTree = "<group>";
+		};
+		3289E026275AF6FB0058C710 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3289E027275AF6FB0058C710 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3289E01C275AF6F90058C710 /* Movie Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3289E02B275AF6FB0058C710 /* Build configuration list for PBXNativeTarget "Movie Challenge" */;
+			buildPhases = (
+				3289E019275AF6F90058C710 /* Sources */,
+				3289E01A275AF6F90058C710 /* Frameworks */,
+				3289E01B275AF6F90058C710 /* Resources */,
+				3284FFE0275B1EAF0039F3EB /* Apollo Codegen */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Movie Challenge";
+			packageProductDependencies = (
+				3284FFCF275B033A0039F3EB /* Apollo */,
+				3284FFD1275B033A0039F3EB /* ApolloSQLite */,
+			);
+			productName = "SwiftUI Base";
+			productReference = 3289E01D275AF6F90058C710 /* Movie Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3289E015275AF6F90058C710 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					3289E01C275AF6F90058C710 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 3289E018275AF6F90058C710 /* Build configuration list for PBXProject "Movie Challenge" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3289E014275AF6F90058C710;
+			packageReferences = (
+				3284FFCE275B033A0039F3EB /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
+			productRefGroup = 3289E01E275AF6F90058C710 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3289E01C275AF6F90058C710 /* Movie Challenge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3289E01B275AF6F90058C710 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32DF5F31275AFB0E0016B534 /* Movies.graphql in Resources */,
+				3289E028275AF6FB0058C710 /* Preview Assets.xcassets in Resources */,
+				3289E025275AF6FB0058C710 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3284FFE0275B1EAF0039F3EB /* Apollo Codegen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Apollo Codegen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\ncd ../ApolloCodegen\nxcrun -sdk macosx swift run ApolloCodegen generate\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3289E019275AF6F90058C710 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3289E023275AF6F90058C710 /* ContentView.swift in Sources */,
+				3289E021275AF6F90058C710 /* MovieChallengeApp.swift in Sources */,
+				32DF5F33275AFB1B0016B534 /* Network.swift in Sources */,
+				3284FFDB275B0CF40039F3EB /* Movies.graphql.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3289E029275AF6FB0058C710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3289E02A275AF6FB0058C710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3289E02C275AF6FB0058C710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MovieChallenge/Preview Content\"";
+				DEVELOPMENT_TEAM = 59Q2VRCG46;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.podium.SwiftUI-Base";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3289E02D275AF6FB0058C710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MovieChallenge/Preview Content\"";
+				DEVELOPMENT_TEAM = 59Q2VRCG46;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.podium.SwiftUI-Base";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3289E018275AF6F90058C710 /* Build configuration list for PBXProject "Movie Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3289E029275AF6FB0058C710 /* Debug */,
+				3289E02A275AF6FB0058C710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3289E02B275AF6FB0058C710 /* Build configuration list for PBXNativeTarget "Movie Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3289E02C275AF6FB0058C710 /* Debug */,
+				3289E02D275AF6FB0058C710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3284FFCE275B033A0039F3EB /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 0.50.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3284FFCF275B033A0039F3EB /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3284FFCE275B033A0039F3EB /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		3284FFD1275B033A0039F3EB /* ApolloSQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3284FFCE275B033A0039F3EB /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloSQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3289E015275AF6F90058C710 /* Project object */;
+}
