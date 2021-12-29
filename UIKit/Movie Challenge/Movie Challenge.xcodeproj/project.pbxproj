@@ -180,7 +180,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\ncd ../ApolloCodegen\nxcrun -sdk macosx swift run ApolloCodegen generate\n";
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\ncd ../../ApolloCodegen\nxcrun -sdk macosx swift run ApolloCodegen generate\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
