@@ -12,16 +12,6 @@ class GenreCollectionCell :UICollectionViewCell {
     
     @IBOutlet weak var textLabel: UILabel!
     
-    
-//    override func prepareForReuse() {
-//        print("%%%%%%%%%%%% collection cell prepareForReuse() was called ! ")
-//        if self.isSelected {
-//            self.backgroundColor = .red
-//        } else {
-//            self.backgroundColor = .systemTeal
-//            
-//        }
-//    }
 
 }
 

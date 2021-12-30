@@ -60,7 +60,7 @@ class DetailTableViewController : UIViewController {
     }
 }
 
-
+//MARK: TableView Delegate and DataSource
 extension DetailTableViewController : UITableViewDataSource,UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {

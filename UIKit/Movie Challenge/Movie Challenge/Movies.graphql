@@ -9,20 +9,6 @@ query GetMoviesQuery {
   }
 }
 
-
-
-query SearchGenres($genre:String) {
-  movies(genre:$genre) {
-    id
-    title
-    popularity
-    genres
-    posterPath
-    overview
-  }
-}
-
-
 query SearchID {
   movie(id:775996) {
     id
