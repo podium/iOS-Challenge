@@ -11,11 +11,12 @@ class MasterTableViewController : UIViewController {
     
     var movies = [SearchMoviesQuery.Data.Movie]()
     var topFivePopularMovies = [SearchMoviesQuery.Data.Movie]()
-
-    
+    var genres = [String]()
+    var currentGenre = ""
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var aSpinner: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
@@ -30,40 +31,49 @@ class MasterTableViewController : UIViewController {
     func setupUI() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.keyboardDismissMode = .onDrag
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.keyboardDismissMode = .onDrag
     }
     
-    func fetchData() {
-              let query = SearchMoviesQuery() // all movies
-//              let query = SearchMoviesQuery(genre: "Action", limit: 2)
-              
-            
-            Network.shared.apollo.fetch(query: query) { result in
-              switch result {
-                case .success(let graphQLResult):
-                  print("Found \(graphQLResult.data?.movies?.count ?? 0) movies")
-
-                  if var movies = graphQLResult.data?.movies?.compactMap({ $0 }) {
-                      movies.sort { $0.popularity > $1.popularity}
-                      movies.map { movie in
-//                          print("movie title:\(movie.title) genre:\(movie.genres) popularity:\(movie.popularity)")
-//                          print(" poster path:\(movie.posterPath)")
-//                          print(" overview:\(movie.overview)")
-//                          print("\n")
-                      }
-                      
-                      self.movies = movies
-//                      let rangeTop5 = movies.startIndex ..< movies.index(movies.startIndex, offsetBy: 5)
-//                      self.topFivePopularMovies = movies[rangeTop5]
-                      self.topFivePopularMovies = Array(movies[0...4])
-                      self.tableView.reloadData()
-                  }
-                  
-                case .failure(let error):
-                  print("Error getting movies: \(error.localizedDescription)")
-              }
+    func fetchData(genre:String = "") {
+        
+        aSpinner.startAnimating()
+        let query = SearchMoviesQuery(genre: genre, limit: 0)
+        Network.shared.apollo.fetch(query: query) { result in
+            switch result {
+            case .success(let graphQLResult):
+                print("Found \(graphQLResult.data?.movies?.count ?? 0) movies")
+                print("all genres:\(graphQLResult.data?.genres)")
+                
+                if var movies = graphQLResult.data?.movies?.compactMap({ $0 }) {
+                    movies.sort { $0.popularity > $1.popularity}
+                    self.movies = movies
+                    let max = movies.count > 5 ? 5 : movies.count
+                    self.topFivePopularMovies = Array(movies[0..<max])
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.aSpinner.stopAnimating()
+                    }
+                }
+                
+                if var genres = graphQLResult.data?.genres.compactMap({ $0 }) {
+                    genres.sort()
+                    genres.insert("Show All", at: 0)
+                    print(" ==> all genres:\(genres), type:\(type(of: genres))")
+                    self.genres = genres
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                }
+                
+            case .failure(let error):
+                print("Error getting movies: \(error.localizedDescription)")
             }
-
+        }
+        
     }
 }
 
@@ -92,18 +102,13 @@ extension MasterTableViewController: UITableViewDataSource, UITableViewDelegate 
         case 0 :
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "topMovieCell", for: indexPath)
-            //            let cell = tableView.dequeueReusableCell(withIdentifier: "topMovieCell")!
-//            let cell = UITableViewCell(style: .default, reuseIdentifier: "topMovieCell")
-//            cell.accessoryType = .detailButton
             cell.textLabel?.text = self.topFivePopularMovies[indexPath.row].title
-//            tableView.rowHeight = 80
             return cell
             
         default:
             print("indexPath:\(indexPath),self.movies.count:\(self.movies.count)")
             let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
             cell.textLabel?.text = self.movies[indexPath.row].title
-//            tableView.rowHeight = 40
             return cell
         }
         
@@ -111,9 +116,9 @@ extension MasterTableViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Top 5 Popular Movies"
+            return "Top Popular \(currentGenre) Movies"
         } else {
-            return "All Movies"
+            return "All \(currentGenre) Movies"
         }
     }
     
@@ -125,5 +130,40 @@ extension MasterTableViewController: UITableViewDataSource, UITableViewDelegate 
         else { return  }
         nextVC.movie = movies[indexPath.row]
         navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+
+extension MasterTableViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        print(" --> collection view numberOfSections")
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(" --> collectionView numberOfItemsInSection , genres:\(genres)")
+        return genres.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "genreCell", for: indexPath) as! GenreCollectionCell
+        
+        cell.textLabel.text = genres[indexPath.row]
+        cell.backgroundColor = .systemTeal
+        print(" --> cell for Item at indePath:\(indexPath), genres:\(genres[indexPath.row])")
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        currentGenre = genres[indexPath.row] == "Show All" ? "":genres[indexPath.row]
+        print(" ---> you tap collection cell at :\(indexPath) , genre:\(genres[indexPath.row])")
+        
+        if currentGenre == "Show All" {
+            fetchData()
+        } else {
+            fetchData(genre: currentGenre)
+        }
+        
     }
 }
