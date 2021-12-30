@@ -40,9 +40,19 @@ query SearchMovies($genre:String="",$limit:Int=0) {
     id
     title
     popularity
+    voteAverage
     genres
     posterPath
     overview
+    
+    director {
+      name
+    }
+    
+    cast {
+      name
+      character
+     }
   }
   genres
 }

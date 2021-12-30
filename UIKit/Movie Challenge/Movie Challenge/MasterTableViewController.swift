@@ -90,20 +90,20 @@ extension MasterTableViewController: UITableViewDataSource, UITableViewDelegate 
         
         switch indexPath.section {
         case 0 :
-            print("indexPath:\(indexPath),self.movies:\(self.movies)")
             
-            //            let cell = tableView.dequeueReusableCell(withIdentifier: "topMovieCell", for: indexPath)
-            let cell = tableView.dequeueReusableCell(withIdentifier: "topMovieCell")!
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "topMovieCell", for: indexPath)
+            //            let cell = tableView.dequeueReusableCell(withIdentifier: "topMovieCell")!
+//            let cell = UITableViewCell(style: .default, reuseIdentifier: "topMovieCell")
+//            cell.accessoryType = .detailButton
             cell.textLabel?.text = self.topFivePopularMovies[indexPath.row].title
-            tableView.rowHeight = 80
+//            tableView.rowHeight = 80
             return cell
             
         default:
             print("indexPath:\(indexPath),self.movies.count:\(self.movies.count)")
             let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
             cell.textLabel?.text = self.movies[indexPath.row].title
-            tableView.rowHeight = 40
+//            tableView.rowHeight = 40
             return cell
         }
         
@@ -115,5 +115,15 @@ extension MasterTableViewController: UITableViewDataSource, UITableViewDelegate 
         } else {
             return "All Movies"
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print(" you tapped tableView cell at indexPath:\(indexPath)")
+
+        guard let nextVC = storyboard?.instantiateViewController(withIdentifier: "detailVC") as? DetailTableViewController
+        else { return  }
+        nextVC.movie = movies[indexPath.row]
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
