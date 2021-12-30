@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		118CBDD3277D0EF500579E60 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118CBDD2277D0EF500579E60 /* MasterTableViewController.swift */; };
 		3284FFD6275B0CEA0039F3EB /* Movies.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284FFD4275B0CEA0039F3EB /* Movies.graphql.swift */; };
 		3284FFDE275B14130039F3EB /* Movies.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 3284FFDD275B14130039F3EB /* Movies.graphql */; };
 		3289DFEF275AF2170058C710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3289DFEE275AF2170058C710 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		118CBDD2277D0EF500579E60 /* MasterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 		3284FFD4275B0CEA0039F3EB /* Movies.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movies.graphql.swift; sourceTree = "<group>"; };
 		3284FFDD275B14130039F3EB /* Movies.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Movies.graphql; sourceTree = "<group>"; };
 		3289DFEB275AF2170058C710 /* Movie Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 				3284FFD3275B0CEA0039F3EB /* Generated */,
 				3289DFF0275AF2170058C710 /* SceneDelegate.swift */,
 				3289DFF2275AF2170058C710 /* ViewController.swift */,
+				118CBDD2277D0EF500579E60 /* MasterTableViewController.swift */,
 				3284FFDD275B14130039F3EB /* Movies.graphql */,
 				3289E009275AF3430058C710 /* Network.swift */,
 				3289DFF4275AF2170058C710 /* Main.storyboard */,
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3289DFF3275AF2170058C710 /* ViewController.swift in Sources */,
+				118CBDD3277D0EF500579E60 /* MasterTableViewController.swift in Sources */,
 				3289DFEF275AF2170058C710 /* AppDelegate.swift in Sources */,
 				3289DFF1275AF2170058C710 /* SceneDelegate.swift in Sources */,
 				3289E00A275AF3430058C710 /* Network.swift in Sources */,
@@ -342,7 +346,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59Q2VRCG46;
+				DEVELOPMENT_TEAM = DHN3LPWQJX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Movie Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -355,7 +359,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.podium.UIKit-Base";
+				PRODUCT_BUNDLE_IDENTIFIER = MovieChallenge.Patrick.Lee.Swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -370,7 +374,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59Q2VRCG46;
+				DEVELOPMENT_TEAM = DHN3LPWQJX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Movie Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -383,7 +387,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.podium.UIKit-Base";
+				PRODUCT_BUNDLE_IDENTIFIER = MovieChallenge.Patrick.Lee.Swift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -1,5 +1,48 @@
 query GetMoviesQuery {
   movies {
+    id
     title
+    popularity
+    genres
+    posterPath
+    overview
   }
+}
+
+
+
+query SearchGenres($genre:String) {
+  movies(genre:$genre) {
+    id
+    title
+    popularity
+    genres
+    posterPath
+    overview
+  }
+}
+
+
+query SearchID {
+  movie(id:775996) {
+    id
+    title
+    posterPath
+    overview
+  }
+  
+  genres
+}
+
+
+query SearchMovies($genre:String="",$limit:Int=0) {
+  movies(genre:$genre,limit:$limit) {
+    id
+    title
+    popularity
+    genres
+    posterPath
+    overview
+  }
+  genres
 }
