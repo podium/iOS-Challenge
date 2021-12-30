@@ -36,11 +36,17 @@ class MasterTableViewController : UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.keyboardDismissMode = .onDrag
+        
+        searchBar.delegate = self
+        searchBar.autocapitalizationType = .none
+        searchBar.placeholder = "Search Movie Title"
     }
     
     func fetchData(genre:String = "") {
         
         aSpinner.startAnimating()
+        searchBar.isUserInteractionEnabled = false
+        
         let query = SearchMoviesQuery(genre: genre, limit: 0)
         Network.shared.apollo.fetch(query: query) { result in
             switch result {
@@ -56,6 +62,7 @@ class MasterTableViewController : UIViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                         self.aSpinner.stopAnimating()
+                        self.searchBar.isUserInteractionEnabled = true
                     }
                 }
                 
@@ -155,6 +162,7 @@ extension MasterTableViewController: UICollectionViewDelegate,UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchBar.text = ""
         let cell = collectionView.cellForItem(at: indexPath)
         currentGenre = genres[indexPath.row] == "Show All" ? "":genres[indexPath.row]
         print(" ---> you tap collection cell at :\(indexPath) , genre:\(genres[indexPath.row])")
@@ -165,5 +173,49 @@ extension MasterTableViewController: UICollectionViewDelegate,UICollectionViewDa
             fetchData(genre: currentGenre)
         }
         
+    }
+}
+
+
+extension MasterTableViewController : UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("search button clicked to search :\(String(describing: searchBar.searchTextField.text))")
+        
+        guard let searchText = searchBar.text else {return}
+        
+        if searchText == "" {
+        } else {
+            
+            print(" ===> search text = :\(searchText)")
+            var matchMovies = [SearchMoviesQuery.Data.Movie]()
+            for movie in movies {
+//                if movie.title.lowercased() == searchText.lowercased() {
+                if movie.title.lowercased().contains(searchText.lowercased()) {
+                    matchMovies.append(movie)
+                }
+            }
+            movies = matchMovies
+            tableView.reloadData()
+        }
+        
+        
+        searchBar.resignFirstResponder()
+    }
+    
+    
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
+        if searchText == "" {
+            fetchData()
+            searchBar.resignFirstResponder()
+        }
+    }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        fetchData()
+        searchBar.resignFirstResponder()
     }
 }

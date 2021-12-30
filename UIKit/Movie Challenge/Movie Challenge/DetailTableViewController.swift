@@ -16,22 +16,10 @@ class DetailTableViewController : UIViewController {
     
     var movie : SearchMoviesQuery.Data.Movie! {
         didSet {
-//            setupUI()
-//            loadData()
+            
         }
     }
     
-//    //MARK: data for three tableViewCell
-//    // data for overView-cell
-//    var overView : String {
-//        return movie.overview
-//    }
-//
-//    //data for info-cell
-//    var movieTitle : String!
-//    var rating : String!
-//    var genres : String!
-//    var director : String!
     
     //data for cast-cell
     var cast : [SearchMoviesQuery.Data.Movie.Cast] {
@@ -101,21 +89,25 @@ extension DetailTableViewController : UITableViewDataSource,UITableViewDelegate 
             
         case 0 : // overview
             let cell = UITableViewCell(style: .default, reuseIdentifier: "overviewCell")
-            cell.textLabel?.numberOfLines = 0;
+            cell.textLabel?.numberOfLines = 0
             cell.textLabel?.lineBreakMode = .byWordWrapping
             cell.textLabel?.text = movie.overview
             return cell
             
         case 1 : // title,rating,genres,director
             let cell = UITableViewCell(style: .default, reuseIdentifier: "infoCell")
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.lineBreakMode = .byWordWrapping
+
             switch indexPath.row {
 
-            case 0: // title
+            case 0:
                 cell.textLabel?.text = "Title: \(movie.title)"
-            case 1: // rating
+            case 1:
                 cell.textLabel?.text = "Rating: \(movie.voteAverage)"
 
             case 2:
+                
                 cell.textLabel?.text = "genres: \(movie.genres)"
 
             default:
